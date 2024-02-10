@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>To-Do List</h1>
+        <div>
+            <input v-model="newTask" @keyup.enter="addTask" placeholder="Aggiungi nuova attività">
+            <ul>
+                <li v-for="(task, index) in tasks" :key="index">
+                    {{ task }}
+                    <button @click="removeTask(index)">Rimuovi</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
